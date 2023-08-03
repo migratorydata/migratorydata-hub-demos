@@ -1,0 +1,498 @@
+/* nav {
+    min-height: 110px;
+} */
+
+a {
+  cursor: pointer;
+}
+
+.navbar-nav > li {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* .nav-item {
+  font-size: 120%;
+  font-weight: 400;
+} */
+
+table>tbody>tr>td.success {
+background-color: #A0DBF5;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+  border-color: #b8b8b8;
+  color: #424b5f;
+}
+
+.btn-outline-primary:hover {
+  background-color: #f6ae2d;
+}
+
+.grey-text .fa {
+  color: black;
+}
+
+.btn-group > .dropdown-toggle {
+  color: black;
+  background-color: #fdfdfd;
+}
+
+
+.footer p {
+  font-size: 90%;
+}
+
+.footer i {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.blue-text {
+  color: #007bff !important;
+}
+
+.gray-color {
+  color: #666666 !important;
+}
+
+.content {
+  min-height: calc(100vh - 70px);
+}
+
+div.scroll {
+  margin: 4px, 4px;
+  padding: 4px;
+  width: auto;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
+}
+
+.footer {
+  padding: 20px 0;
+  background: #424b5f;
+  color: white;
+}
+
+/* .btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: red !important;
+  color: #ffffff !important;
+  border-color: #48B4E3 !important;
+}
+
+.btn-primary:hover {
+  color: #ffffff !important;
+} */
+
+
+
+/* 
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+  background-color: transparent;
+  border: 1px solid #48B4E3 !important;
+  color: #48B4E3;
+}
+
+.btn-secondary:hover {
+  background-color:#48B4E3 !important;
+  color: #ffffff !important;
+} */
+
+.pre-prism-code {
+  max-height: 400px !important;
+  /*workaround for Prism scrollbars*/
+}
+
+pre[class*="language-"] {
+  font-size: 0.75em;
+}
+
+/* stats */
+.metric {
+  font-weight: 200;
+  font-size: 16px;
+  margin: 0px;
+  display: block;
+  color: #424b5f;
+}
+
+/* .card-img,
+.card-img-top {
+  border-top-left-radius: calc(1rem - 1px);
+  border-top-right-radius: calc(1rem - 1px);
+}
+
+.card h5 {
+  overflow: hidden;
+  height: 36px;
+  font-weight: 500;
+  font-size: 1rem;
+} 
+
+.card-img-top {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-img-top-apps {
+  width: 100%;
+  object-fit: contain;
+}
+
+.card h2 {
+  font-size: 1rem;
+} */
+
+
+div.code-toolbar > .toolbar {
+  top: 1.2em;
+}
+
+/* tooltip */
+.desc {
+  text-decoration: underline dotted;
+  text-decoration-color: #48B4E3;
+}
+
+/* horizontal rule with text in the middle */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #AFACAB;
+  font-size: 12px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px dotted #AFACAB;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+
+.tdwrap {
+  word-break: break-all
+}
+
+code {
+  color: #424b5f;
+  font-family: Consolas,monospace !important;
+}
+
+.gaming::before {
+  background: url(../images/gaming.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+
+.data::before {
+  background: url(../images/data.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+
+.finance::before {
+  background: url(../images/finance.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+
+.sports::before {
+  background: url(../images/sports.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+
+.others::before {
+  background: url(../images/others.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+
+.transportation::before {
+  background: url(../images/transportation.svg) 0 0 no-repeat;
+  background-size: 18px;
+  content: '';
+  padding: 0 0 0 24px;
+  position: relative;
+  top: 1px;
+}
+
+.nav-link {
+  color: rgba(0,0,0,.5);
+}
+
+.nav-link:hover{
+  color: rgba(103,178,223,0.8);
+}
+
+
+.nav-link.selected {
+  color: rgba(103,178,223,1);
+}
+
+.category {
+  width: 160px;
+  text-align: left;
+}
+
+/* begin sign in */
+.form-signin {
+  max-width: 420px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* end sign in */
+
+/* begin sign up */
+.form-signup {
+  max-width: 420px;
+  padding: 15px;
+}
+
+.form-signup .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signup input[name="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[name="password"]  {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+.form-signup input[name="name"]  {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+.form-signup input[name="password_confirmation"] {
+  margin-bottom: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* end sign up */
+
+/* begin password reset */
+.form-password-reset {
+  max-width: 420px;
+  padding: 15px;
+}
+
+.form-password-reset .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-password-reset input[name="email"]  {
+  margin-bottom: 15px;
+}
+/* end sign up */
+
+
+/* .card {
+  background: #fff;
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s box-shadow,
+      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  border: 1;
+  border-radius: 1rem;
+}
+*/
+
+.card:hover {
+  /* transform: scale(1.02); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+a {
+  color: rgba(103,178,223,1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #48B4E3 !important;
+}
+
+.text-bg-primary {
+  color: #fff!important;
+  background-color: rgba(7,141,198,0.8) !important;
+}
+
+.text-bg-success {
+  color: #fff!important;
+  background-color: RGBA(25,135,84,var(--bs-bg-opacity,0.8))!important; 
+}
+
+
+/*
+ CSS for the gamification demo
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.0em;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #06c;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #06c;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+.tabset {
+  max-width: 50em;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.fa, .fas {
+font-weight: 400;
+}
+
+
+.stepper {
+.line {
+  width: 1px;
+  background-color: #48B4E3 !important;
+}
+.lead {
+  font-size: 1.1rem;
+}
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+color: rgba(0,0,0,.5);
+/* background-color: #f8f9fa; */
+background-color: rgba(103,178,223,0.2);
+}

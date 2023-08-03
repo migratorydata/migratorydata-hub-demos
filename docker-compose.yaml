@@ -1,0 +1,97 @@
+
+version: '3'
+services:
+  migratorydata:
+    image: migratorydata/server:6.0-test
+    restart: always
+    ports:
+      - "8800:8800"
+    networks:
+      - controlcenter
+    environment:
+      MIGRATORYDATA_JAVA_EXTRA_OPTS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap'
+
+  demo-frontend:
+    image: demo-frontend
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - controlcenter
+
+  demo-bikes:
+    image: demo-others
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - MAIN=com.real.time.publisher.jcdecaux.bikes.App
+    volumes:
+      - ./config.properties:/backend/config.properties
+
+  demo-traffic:
+    image: demo-others
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - MAIN=com.real.time.publisher.brussels.traffic.App
+    volumes:
+      - ./config.properties:/backend/config.properties
+
+  demo-cryptocurrency:
+    image: demo-others
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - MAIN=com.real.time.publisher.cryptocurrency.App
+    volumes:
+      - ./config.properties:/backend/config.properties
+
+  demo-parking-amsterdam:
+    image: demo-others
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - MAIN=com.real.time.publisher.amsterdam.parkings.App
+    volumes:
+      - ./config.properties:/backend/config.properties
+
+  demo-parking-zurich:
+    image: demo-others
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - MAIN=com.real.time.publisher.zurich.parkings.App
+    volumes:
+      - ./config.properties:/backend/config.properties
+
+  demo-agent-earthquake:
+    image: demo-earthquake
+    restart: always
+    depends_on:
+      - migratorydata
+    networks:
+      - controlcenter
+    environment:
+      - SERVER=migratorydata:8800
+      - TOKEN=some-token
+      - SUBJECT=/migratorydata/seismic/info
+
+networks:
+  controlcenter:
+    driver: bridge
+

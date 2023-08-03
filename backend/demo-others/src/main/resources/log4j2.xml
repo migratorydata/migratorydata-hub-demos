@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Properties>
+        <Property name="basePath">logs</Property>
+    </Properties>
+    <Appenders>
+
+        <RollingFile name="FOOTBALL-DATA"
+                     fileName="${basePath}/footballdata/football-data.log"
+                     filePattern="${basePath}/footballdata/football-data.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="AMSTERDAM-PARKINGS"
+                     fileName="${basePath}/amsterdamparkings/amsterdam-parkings.log"
+                     filePattern="${basePath}/amsterdamparkings/amsterdam-parkings.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="ZURICH-PARKINGS"
+                     fileName="${basePath}/zurichparkings/zurich-parkings.log"
+                     filePattern="${basePath}/zurichparkings/zurich-parkings.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="JCDECAUX-BIKES"
+                     fileName="${basePath}/jcdecauxbikes/jcdecaux-bikes.log"
+                     filePattern="${basePath}/jcdecauxbikes/jcdecaux-bikes.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="BRUSSELS-TRAFFIC"
+                     fileName="${basePath}/brusselstraffic/brussels-traffic.log"
+                     filePattern="${basePath}/brusselstraffic/brussels-traffic.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="CRYPTOCURRENCY"
+                     fileName="${basePath}/cryptocurrency/cryptocurrency.log"
+                     filePattern="${basePath}/cryptocurrency/cryptocurrency.log.%d{MM-dd-yyyy-HH}.%i.log.gz"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy interval="24"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- Console Appender -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{yyyy-MM-dd'T'HH:mm:ss.SZ}] [%-5p] [%C{2}] %m%n" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.real.time.publisher.footballdata" level="debug">
+            <AppenderRef ref="FOOTBALL-DATA" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.amsterdam.parkings" level="debug">
+            <AppenderRef ref="AMSTERDAM-PARKINGS" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.zurich.parkings" level="debug">
+            <AppenderRef ref="ZURICH-PARKINGS" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.jcdecaux.bikes" level="debug">
+            <AppenderRef ref="JCDECAUX-BIKES" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.brussels.traffic" level="debug">
+            <AppenderRef ref="BRUSSELS-TRAFFIC" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.cryptocurrency" level="debug">
+            <AppenderRef ref="CRYPTOCURRENCY" level="debug"/>
+            <AppenderRef ref="STDOUT" level="info"/>
+        </Logger>
+
+        <Logger name="com.real.time.publisher.common" level="debug">
+            <AppenderRef ref="STDOUT" level="debug"/>
+        </Logger>
+
+    </Loggers>
+
+</Configuration>
