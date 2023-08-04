@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "migratorydata-client": "~6.0.11",
     "vue": "^3.3.4",
     "vue-json-pretty": "^2.2.4"
   },

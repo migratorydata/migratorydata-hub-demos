@@ -3,87 +3,10 @@ import 'vue-json-pretty/lib/styles.css';
 
 import { ref } from 'vue'
 
+import * as data from './data'
+
 import AppInfo from './components/AppInfo.vue'
 
-const map = 'map'
-const table = 'table'
-
-const seismicTitle = "Latest Earthquakes"
-const seismicInfo = "This streaming API delivers real-time updates on earthquakes worldwide from the Euro-Mediterranean Seismological Centre. It offers a single endpoint to get the latest earthquakes, including their location on the globe, magnitude, and depth."
-const seismicEndpoints = [
-  {
-    endpoint: "/migratorydata/seismic/info",
-    operation: "SUB",
-  }
-]
-
-const bikesTitle = "Available bikes"
-const bikesInfo = "This streaming API provides real-time data on the availability of bikes in a number of cities across various countries. The information is gathered from JCDecaux.com."
-const bikesEndpoints = [
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/santander",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/amiens",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/lillestrom",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/namur",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/toyama",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/besancon",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/nancy",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/jcdecauxbikes/vilnius",
-    operation: "SUB",
-  }
-]
-
-const parkingTitle = "Car parking places"
-const parkingInfo = "This streaming API supplies real-time information about the available car spaces. Data is sourced from data.europa.eu. At this moment, the API offers two endpoints delivering real-time parking data for Amsterdam and Zurich."
-const parkingEndpoints = [
-  {
-    endpoint: "/migratorydata/parking/amsterdam",
-    operation: "SUB",
-  },
-  {
-    endpoint: "/migratorydata/parking/zurich",
-    operation: "SUB",
-  }
-]
-
-const cryptoTitle = "Cryptocurrency prices"
-const cryptoInfo = "This streaming API provides real-time data about a number of cryptocurrencies. Price data is retrieved from alternative.me. "
-const cryptoEndpoints = [
-  {
-    endpoint: "/migratorydata/cryptocurrency/rates",
-    operation: "SUB",
-  }
-]
-
-const trafficTitle = "Live traffic"
-const trafficInfo = "This streaming API supplies real-time traffic details, acquired through magnetic loops or cameras. Data is sourced from data.europa.eu. At this moment, the API offers a single endpoint delivering real-time traffic data for the Brussels Region."
-const trafficEndpoints = [
-  {
-    endpoint: "/migratorydata/traffic/brussels",
-    operation: "SUB",
-  }
-]
 
 const selectedDemo = ref('seismic')
 
@@ -122,28 +45,29 @@ function selectDemo(api) {
             <a class="nav-link" @click="selectDemo('traffic')" href="#">Live Traffic</a>
           </li>
         </ul>
-
-
-
       </div>
     </nav>
 
 
-
   </div>
   <template v-if="selectedDemo == 'seismic'">
-    <AppInfo v-bind:endpoints="seismicEndpoints" v-bind:tab="map" v-bind:info="seismicInfo" v-bind:title="seismicTitle" />
+    <AppInfo v-bind:endpoints="data.seismicEndpoints" v-bind:tab="data.map" v-bind:info="data.seismicInfo"
+      v-bind:title="data.seismicTitle" />
   </template>
   <template v-if="selectedDemo == 'bikes'">
-    <AppInfo v-bind:endpoints="bikesEndpoints" v-bind:tab="map" v-bind:info="bikesInfo" v-bind:title="bikesTitle"/>
+    <AppInfo v-bind:endpoints="data.bikesEndpoints" v-bind:tab="data.map" v-bind:info="data.bikesInfo"
+      v-bind:title="data.bikesTitle" />
   </template>
   <template v-if="selectedDemo == 'parking'">
-    <AppInfo v-bind:endpoints="parkingEndpoints" v-bind:tab="table" v-bind:info="parkingInfo" v-bind:title="parkingTitle"/>
+    <AppInfo v-bind:endpoints="data.parkingEndpoints" v-bind:tab="data.table" v-bind:info="data.parkingInfo"
+      v-bind:title="data.parkingTitle" />
   </template>
   <template v-if="selectedDemo == 'crypto'">
-    <AppInfo v-bind:endpoints="cryptoEndpoints" v-bind:tab="table" v-bind:info="cryptoInfo" v-bind:title="cryptoTitle"/>
+    <AppInfo v-bind:endpoints="data.cryptoEndpoints" v-bind:tab="data.table" v-bind:info="data.cryptoInfo"
+      v-bind:title="data.cryptoTitle" />
   </template>
   <template v-if="selectedDemo == 'traffic'">
-    <AppInfo v-bind:endpoints="trafficEndpoints" v-bind:tab="table" v-bind:info="trafficInfo" v-bind:title="trafficTitle"/>
+    <AppInfo v-bind:endpoints="data.trafficEndpoints" v-bind:tab="data.table" v-bind:info="data.trafficInfo"
+      v-bind:title="data.trafficTitle" />
   </template>
 </template>
