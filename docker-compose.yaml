@@ -2,14 +2,12 @@
 version: '3'
 services:
   migratorydata:
-    image: migratorydata/server:6.0-test
+    image: migratorydata/server:latest
     restart: always
     ports:
       - "8800:8800"
     networks:
       - controlcenter
-    environment:
-      MIGRATORYDATA_JAVA_EXTRA_OPTS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap'
 
   demo-frontend:
     image: demo-frontend
